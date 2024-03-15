@@ -13,13 +13,7 @@ import java.io.File;
 
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
-//    public TelegramBot() {
-//        super("7160295371:AAFdrSib7JMrQ-UQP7Bt6CDNW75v2kVe0QY");
-//    }
-    @Override
-    public String getBotToken(){
-        return "7160295371:AAFdrSib7JMrQ-UQP7Bt6CDNW75v2kVe0QY";
-    }
+//
     @Override
     public void onUpdateReceived(Update update) {
         String text = update.getMessage().getText();
