@@ -1,4 +1,5 @@
 package com.vakhim.telegram_bot;
+
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -30,7 +31,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         String command = update.getMessage().getText();
 
         if (command.equals("/run")) {
-            String mes = "Mnak nis srolanh tea oun";
+            String mes = "ក្នុងនាមយើងជា ខ្មែរដូចគ្នា បើ you មិនជួយ sl nh ទេបានប្រទេសណា ជួយ sl";
             SendMessage sendMessage1 = new SendMessage();
             sendMessage1.setChatId(update.getMessage().getChatId().toString());
             sendMessage1.setText(mes);
@@ -51,9 +52,32 @@ public class TelegramBot extends TelegramLongPollingBot {
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
-        } else if (command.equals("/send")) {
+        } else if (command.equals("/test")) {
+            String mes = "https://youtu.be/m9wJ3TQ0kqQ?si=gWHQeOp99847rz4_";
+            SendMessage sendMessage1 = new SendMessage();
+            sendMessage1.setChatId(update.getMessage().getChatId().toString());
+            sendMessage1.setText(mes);
+            try {
+                execute(sendMessage1);
+
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+        } else if (command.equals("/play")) {
+//            String mes = "Nv jam tver ey tt mix min prom chat tv ke";
+            String mes = "https://youtu.be/MHI6Ssm0_b0?si=eT46BrWZvKQMUgdJ";
+            SendMessage sendMessage1 = new SendMessage();
+            sendMessage1.setChatId(update.getMessage().getChatId().toString());
+            sendMessage1.setText(mes);
+            try {
+                execute(sendMessage1);
+
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+        } else if (command.equals("/cheng")) {
             // Array of your image paths
-            String[] images = {"D:\\user01\\telegram\\crushbnang.jpg", "D:\\user01\\telegram\\FB_IMG_1710386827284.jpg", "D:\\user01\\telegram\\image3.jpg"};
+            String[] images = {"D:\\telegrambot\\cr1.jpg", "D:\\telegrambot\\cr2.jpg", "D:\\telegrambot\\cr3.jpg", "D:\\telegrambot\\cr4.jpg" };
 
             // Create a Random object
             Random rand = new Random();
@@ -75,7 +99,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
-            }
+        }
         System.out.println(text);
     }
 
