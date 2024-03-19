@@ -9,6 +9,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.File;
+import java.util.List;
 import java.util.Random;
 
 @Component
@@ -63,6 +64,22 @@ public class TelegramBot extends TelegramLongPollingBot {
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
+        } else if (command.equals("/roll")) {
+            SendMessage sendMessage1 = new SendMessage();
+            sendMessage1.setChatId(update.getMessage().getChatId().toString());
+
+            // Generate a random number between 1 and 100
+            int randomNumber = (int) (Math.random() * 100) + 1;
+
+            // Set the message text with the rolled number
+            sendMessage1.setText("You rolled: " + randomNumber);
+
+            try {
+                execute(sendMessage1);
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+            //
         } else if (command.equals("/play")) {
 //            String mes = "Nv jam tver ey tt mix min prom chat tv ke";
             String mes = "https://youtu.be/MHI6Ssm0_b0?si=eT46BrWZvKQMUgdJ";
@@ -75,9 +92,39 @@ public class TelegramBot extends TelegramLongPollingBot {
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
+        } else if (command.equals("/tos")) {
+            String mes = "Tos tov order bay";
+            SendMessage sendMessage1 = new SendMessage();
+            sendMessage1.setChatId(update.getMessage().getChatId().toString());
+            sendMessage1.setText(mes);
+            try {
+                execute(sendMessage1);
+
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+        } else if (command.equals("/crush")) {
+            List<String> crush = List.of("Seak", "Cheng", "Chanry");
+            Random rand = new Random();
+
+            // Generate a random index in the range of your list
+            int randomIndex = rand.nextInt(crush.size());
+
+            // Get the random name
+            String randomName = crush.get(randomIndex);
+
+            SendMessage sendMessage1 = new SendMessage();
+            sendMessage1.setChatId(update.getMessage().getChatId().toString());
+            sendMessage1.setText(randomName);
+            try {
+                execute(sendMessage1);
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+
         } else if (command.equals("/cheng")) {
-            // Array of your image paths
-            String[] images = {"D:\\telegrambot\\cr1.jpg", "D:\\telegrambot\\cr2.jpg", "D:\\telegrambot\\cr3.jpg", "D:\\telegrambot\\cr4.jpg" };
+
+            String[] images = {"D:\\telegrambot\\cr1.jpg", "D:\\telegrambot\\cr2.jpg", "D:\\telegrambot\\cr3.jpg", "D:\\telegrambot\\cr4.jpg"};
 
             // Create a Random object
             Random rand = new Random();
@@ -99,7 +146,18 @@ public class TelegramBot extends TelegramLongPollingBot {
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
+        }else {
+            String mes = "I'm sorry, I didn't understand that command. Please try again.";
+            SendMessage sendMessage1 = new SendMessage();
+            sendMessage1.setChatId(update.getMessage().getChatId().toString());
+            sendMessage1.setText(mes);
+            try {
+                execute(sendMessage1);
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
         }
+
         System.out.println(text);
     }
 
