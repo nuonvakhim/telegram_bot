@@ -54,7 +54,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 e.printStackTrace();
             }
         } else if (command.equals("/test")) {
-            String mes = "https://youtu.be/m9wJ3TQ0kqQ?si=gWHQeOp99847rz4_";
+            String mes = "/cheng";
             SendMessage sendMessage1 = new SendMessage();
             sendMessage1.setChatId(update.getMessage().getChatId().toString());
             sendMessage1.setText(mes);
@@ -82,7 +82,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             //
         } else if (command.equals("/play")) {
 //            String mes = "Nv jam tver ey tt mix min prom chat tv ke";
-            String mes = "https://youtu.be/MHI6Ssm0_b0?si=eT46BrWZvKQMUgdJ";
+            String mes = "Don't play with my heart";
             SendMessage sendMessage1 = new SendMessage();
             sendMessage1.setChatId(update.getMessage().getChatId().toString());
             sendMessage1.setText(mes);
@@ -104,7 +104,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 e.printStackTrace();
             }
         } else if (command.equals("/crush")) {
-            List<String> crush = List.of("Seak", "Cheng", "Chanry");
+            List<String> crush = List.of("Cheng", "Cheng", "Cheng");
             Random rand = new Random();
 
             // Generate a random index in the range of your list
@@ -124,7 +124,14 @@ public class TelegramBot extends TelegramLongPollingBot {
 
         } else if (command.equals("/cheng")) {
 
-            String[] images = {"D:\\telegrambot\\cr1.jpg", "D:\\telegrambot\\cr2.jpg", "D:\\telegrambot\\cr3.jpg", "D:\\telegrambot\\cr4.jpg"};
+            String[] images = {"D:\\telegrambot\\cr1.jpg",
+                    "D:\\telegrambot\\cr2.jpg", "D:\\telegrambot\\cr3.jpg",
+                    "D:\\telegrambot\\cr4.jpg", "D:\\telegrambot\\cr5.png",
+                    "D:\\telegrambot\\cr6.jpg", "D:\\telegrambot\\cr7.jpg",
+                    "D:\\telegrambot\\cr8.jpg", "D:\\telegrambot\\cr9.jpg",
+                    "D:\\telegrambot\\cr10.jpg", "D:\\telegrambot\\cr11.jpg",
+                    "D:\\telegrambot\\cr12.jpg", "D:\\telegrambot\\cr13.jpg",
+                    "D:\\telegrambot\\cr14.jpg"};
 
             // Create a Random object
             Random rand = new Random();
@@ -146,7 +153,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
-        }else {
+        } else {
             String mes = "I'm sorry, I didn't understand that command. Please try again.";
             SendMessage sendMessage1 = new SendMessage();
             sendMessage1.setChatId(update.getMessage().getChatId().toString());
